@@ -1,0 +1,15 @@
+.tables-wrapper [class*="col-"] {
+    background-color: #eee;
+    text-align: center;
+    border-radius: 3px;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+    min-height: 480px;
+    line-height: 30px;
+}
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 400px; 
+    height: 300px
+}

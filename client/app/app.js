@@ -6,7 +6,8 @@ angular.module('csvExplorerClientApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'angularFileUpload'
+  'angularFileUpload',
+  'ngGrid'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
