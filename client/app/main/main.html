@@ -1,15 +1,15 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
+<header class="hero-unit" id="banner" ng-controller="MainCtrl">
   <div class="container">
     <h1>CSV Explorer Client</h1>
-    <input type="file" class="btn btn-primary" ng-file-select="onFileSelect($files)">
-    <button class="btn btn-primary" ng-click="upload.abort()">Cancel Upload</button>
+   	<input type="file" class="btn btn-primary" ng-file-select="onFileSelect($files)">
+    <button class="btn btn-primary btn-upload" ng-click="upload.abort()">Cancel Upload</button>
   </div>
 </header>
 
 <footer class="footer">
   <div class="container">
-    2014
+	<!-- footer -->
   </div>
 </footer>

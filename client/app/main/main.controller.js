@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('csvExplorerClientApp')
-.controller('MainCtrl', function ($scope, $http, $upload) {
+.controller('MainCtrl', ['$scope', '$http', '$upload', '$location', function ($scope, $http, $upload, $location) {
     // $scope.awesomeThings = [];
 
     // $http.get('/api/things').success(function(awesomeThings) {
@@ -10,10 +10,12 @@ angular.module('csvExplorerClientApp')
 
 $scope.onFileSelect = function($files) {
     //$files: an array of files selected, each file has name, size, and type.
+    console.log('onFileSelect')
     for (var i = 0; i < $files.length; i++) {
     	var file = $files[i];
+
     	$scope.upload = $upload.upload({
-        url: 'server/upload/url', //upload.php script, node.js route, or servlet url
+        url: 'http://127.0.0.1:5000/upload/', //upload.php script, node.js route, or servlet url
         //method: 'POST' or 'PUT',
         //headers: {'header-key': 'header-value'},
         //withCredentials: true,
@@ -29,6 +31,7 @@ $scope.onFileSelect = function($files) {
     }).success(function(data, status, headers, config) {
         // file is uploaded successfully
         console.log(data);
+        $location.path('/tables');
     });
       //.error(...)
       //.then(success, error, progress); 
@@ -41,4 +44,4 @@ $scope.onFileSelect = function($files) {
     // $scope.upload = $upload.http({...})  see 88#issuecomment-31366487 for sample code.
 };
 
-});
+}]);
