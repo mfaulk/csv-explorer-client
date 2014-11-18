@@ -30,8 +30,11 @@ $scope.onFileSelect = function($files) {
     	console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
     }).success(function(data, status, headers, config) {
         // file is uploaded successfully
+        console.log('onFileSelect: success.');
         console.log(data);
-        $location.path('/tables');
+        $location.path('/tables/' + data.id);
+    }).error(function() {
+        console.log('onFileSelect: error.');
     });
       //.error(...)
       //.then(success, error, progress); 
