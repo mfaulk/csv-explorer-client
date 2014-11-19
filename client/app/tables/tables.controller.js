@@ -7,6 +7,7 @@ angular.module('csvExplorerClientApp')
   	$http.get(tableUrl).
   	success(function(data, status, headers, config) {
   		console.log(data);
+  		$scope.myData = data.rows;
     // this callback will be called asynchronously
     // when the response is available
 	}).
@@ -16,10 +17,10 @@ angular.module('csvExplorerClientApp')
 	});
 
   	$scope.tableName = "table_name.csv";
-    $scope.myData = [{name: "A", age: 50},
-                     {name: "B", age: 43},
-                     {name: "C", age: 27},
-                     {name: "D", age: 29},
-                     {name: "E", age: 34}];
+    // $scope.myData = [{name: "A", age: 50},
+    //                  {name: "B", age: 43},
+    //                  {name: "C", age: 27},
+    //                  {name: "D", age: 29},
+    //                  {name: "E", age: 34}];
     $scope.gridOptions = { data: 'myData' };
   }]);
