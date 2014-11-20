@@ -2,7 +2,7 @@
 
 angular.module('csvExplorerClientApp')
   .controller('TablesCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
-  	var tableUrl = "http://127.0.0.1:5000/api/v1/tables/" + $routeParams.tableID;
+  	var tableUrl = "http://127.0.0.1:5000/api/v1/table/" + $routeParams.tableID;
   	console.log("tableUrl: " + tableUrl);
   	$http.get(tableUrl).
   	success(function(data, status, headers, config) {

@@ -32,7 +32,7 @@ $scope.onFileSelect = function($files) {
         // file is uploaded successfully
         console.log('onFileSelect: success.');
         console.log(data);
-        $location.path('/tables/' + data.id);
+        $location.path('/tables/' + data._id.$oid);
     }).error(function() {
         console.log('onFileSelect: error.');
     });
