@@ -21,7 +21,13 @@ angular.module('csvExplorerClientApp')
     }
 
     /**
-    * Converts JSON from REST API to ng-grid format.
+    * Converts JSON from REST API to ng-grid format, e.g.
+    *  [{name: "A", age: 50},
+    *   {name: "B", age: 43},
+    *   {name: "C", age: 27},
+    *   {name: "D", age: 29},
+    *   {name: "E", age: 34}];
+    *
     * @param {table} 
     * @param {headers} an array of column header strings.
     * @returns {newTable} An array of objects representing rows.
@@ -49,7 +55,7 @@ angular.module('csvExplorerClientApp')
   		console.log(data);
       var headers = defaultHeaders(data.rows);
       $scope.myData = formatTable(data,headers);
-  		$scope.fileName = data.file_name;
+  		$scope.tableName = data.file_name;
     // this callback will be called asynchronously
     // when the response is available
 	}).
@@ -57,12 +63,5 @@ angular.module('csvExplorerClientApp')
     // called asynchronously if an error occurs
     // or server returns response with an error status.
 	});
-
-  	$scope.tableName = "table_name.csv";
-    // $scope.myData = [{name: "A", age: 50},
-    //                  {name: "B", age: 43},
-    //                  {name: "C", age: 27},
-    //                  {name: "D", age: 29},
-    //                  {name: "E", age: 34}];
     $scope.gridOptions = { data: 'myData' };
   }]);
